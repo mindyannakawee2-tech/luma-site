@@ -1,0 +1,6 @@
+name=Example App
+id=example-app
+version=1.0.0
+author=Auralis
+entry=SCRIPTS/run.sh
+description=Example LUMA package.

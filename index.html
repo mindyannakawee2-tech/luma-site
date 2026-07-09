@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LUMA Hub</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">⬢</div>
+      <div>
+        <h1>LUMA Hub</h1>
+        <p>Auralis package repository</p>
+      </div>
+    </div>
+
+    <nav>
+      <a href="#packages">Packages</a>
+      <a href="#upload">Publish</a>
+      <a href="#repo">Repo</a>
+      <a href="packages/index.json">index.json</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div>
+      <span class="pill">LUMA Repository</span>
+      <h2>Install packages from a custom Auralis repo.</h2>
+      <p>
+        A GitHub-like package portal for <strong>.luma</strong> packages,
+        with searchable package cards, install commands, version metadata,
+        and storage-backend ready download links.
+      </p>
+
+      <div class="install-box">
+        <code id="repoCommand">luma repo add official https://username.github.io/luma-repo-website/packages/index.json</code>
+        <button onclick="copyText('repoCommand')">Copy</button>
+      </div>
+
+      <div class="stats">
+        <div><strong id="packageCount">0</strong><span>packages</span></div>
+        <div><strong id="totalDownloads">0</strong><span>downloads</span></div>
+        <div><strong>∞*</strong><span>storage-ready</span></div>
+      </div>
+    </div>
+
+    <div class="terminal-card">
+      <div class="terminal-dots"><span></span><span></span><span></span></div>
+      <pre><code>$ luma update
+Fetching repo index...
+Repo: LUMA Hub
+
+$ luma install aurora-notes
+Resolving package...
+Downloading aurora-notes_1.0.0.luma
+Installing...
+Done.</code></pre>
+    </div>
+  </section>
+
+  <main>
+    <section id="packages" class="section">
+      <div class="section-title">
+        <div>
+          <h2>Packages</h2>
+          <p>Search packages available in this repository.</p>
+        </div>
+        <input id="searchInput" placeholder="Search package, language, tag..." />
+      </div>
+
+      <div id="packageGrid" class="package-grid"></div>
+    </section>
+
+    <section id="upload" class="section split">
+      <div>
+        <h2>Publish a package</h2>
+        <p>
+          GitHub Pages cannot accept real uploads from visitors by itself.
+          This page gives package authors the exact folder format and metadata
+          needed to publish packages through Git commits, GitHub Actions, R2,
+          S3, Drive, or your own storage API.
+        </p>
+
+        <div class="steps">
+          <div><b>1</b><span>Create your <code>.luma</code> package.</span></div>
+          <div><b>2</b><span>Upload the file to <code>/storage</code> or external storage.</span></div>
+          <div><b>3</b><span>Add package metadata to <code>packages/index.json</code>.</span></div>
+          <div><b>4</b><span>Commit and push to GitHub Pages.</span></div>
+        </div>
+      </div>
+
+      <div class="upload-card">
+        <h3>Package metadata example</h3>
+        <pre><code>{
+  "id": "aurora-notes",
+  "name": "Aurora Notes",
+  "version": "1.0.0",
+  "file": "../storage/aurora-notes_1.0.0.luma",
+  "install": "luma install aurora-notes"
+}</code></pre>
+      </div>
+    </section>
+
+    <section id="repo" class="section repo-panel">
+      <h2>Repository setup</h2>
+      <p>Use this repo index URL in LUMA:</p>
+
+      <div class="install-box">
+        <code id="indexUrl">https://username.github.io/luma-repo-website/packages/index.json</code>
+        <button onclick="copyText('indexUrl')">Copy</button>
+      </div>
+
+      <p class="small">
+        *“Infinite storage” means the frontend can point to unlimited external
+        storage providers. GitHub Pages itself is not infinite and should only
+        host the website and metadata.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p>LUMA Hub · Built for Auralis OS package distribution</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+{
+  "repo": {
+    "name": "LUMA Hub",
+    "id": "luma-hub",
+    "owner": "Auralis",
+    "schema": 1,
+    "description": "Official-style LUMA package repository index.",
+    "homepage": "https://username.github.io/luma-repo-website/",
+    "storage_mode": "static-or-external",
+    "created_for": "Auralis OS"
+  },
+  "packages": [
+    {
+      "id": "aurora-notes",
+      "name": "Aurora Notes",
+      "version": "1.0.0",
+      "description": "A clean native notes app example for testing LUMA installs.",
+      "language": "Python",
+      "tags": [
+        "notes",
+        "productivity",
+        "demo"
+      ],
+      "file": "../storage/aurora-notes_1.0.0.luma",
+      "sha256": "replace-with-real-sha256",
+      "size": "2.4 MB",
+      "downloads": 1260,
+      "homepage": "https://github.com/username/aurora-notes",
+      "install": "luma install aurora-notes"
+    },
+    {
+      "id": "glass-terminal",
+      "name": "Glass Terminal",
+      "version": "0.4.2",
+      "description": "Transparent terminal theme package for Auralis OS.",
+      "language": "Shell",
+      "tags": [
+        "terminal",
+        "theme",
+        "auralis"
+      ],
+      "file": "../storage/glass-terminal_0.4.2.luma",
+      "sha256": "replace-with-real-sha256",
+      "size": "420 KB",
+      "downloads": 842,
+      "homepage": "https://github.com/username/glass-terminal",
+      "install": "luma install glass-terminal"
+    },
+    {
+      "id": "luma-runner",
+      "name": "LUMA Runner",
+      "version": "0.1.0",
+      "description": "Runtime helper package for executing LUMA package scripts safely.",
+      "language": "Java",
+      "tags": [
+        "runtime",
+        "core",
+        "runner"
+      ],
+      "file": "../storage/luma-runner_0.1.0.luma",
+      "sha256": "replace-with-real-sha256",
+      "size": "1.1 MB",
+      "downloads": 2214,
+      "homepage": "https://github.com/username/luma-runner",
+      "install": "luma install luma-runner"
+    }
+  ]
+}
